@@ -22,7 +22,7 @@ const borrowSchema = new mongoose_1.Schema({
     versionKey: false
 });
 // Static Method: Book quantity update logic
-borrowSchema.statics.borrowBook = function (bookId, quantity) {
+borrowSchema.statics.createBorrow = function (bookId, quantity) {
     return __awaiter(this, void 0, void 0, function* () {
         const book = yield book_model_1.Book.findById(bookId);
         if (!book) {
