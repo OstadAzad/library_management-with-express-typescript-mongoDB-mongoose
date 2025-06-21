@@ -8,6 +8,14 @@ const app: Application = express();
 //middlewares
 app.use(express.json());
 
+//root route
+app.get("/", (req: Request, res: Response) => {
+    res.status(200).json({
+        success: true,
+        message: "Server is running successfully!"
+    });
+});
+
 //routes
 app.use("/api/books", bookRoutes);
 app.use("/api/borrow", borrowRoutes);

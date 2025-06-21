@@ -9,6 +9,13 @@ const borrow_route_1 = __importDefault(require("./modules/borrow/borrow.route"))
 const app = (0, express_1.default)();
 //middlewares
 app.use(express_1.default.json());
+//root route
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Server is running successfully!"
+    });
+});
 //routes
 app.use("/api/books", book_route_1.default);
 app.use("/api/borrow", borrow_route_1.default);
